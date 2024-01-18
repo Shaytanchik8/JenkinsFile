@@ -11,11 +11,11 @@ pipeline{
 
     stage('Docker build container nginx'){
         steps {
-            dir ('apache') {
+            dir ('nginx') {
                 sh """
-                    docker build -t shaytanchik/nginx-jenkins:1.${env.BUILD_NUMBER} . 
-                    docker push shaytanchik/nginx-jenkins:1.${env.BUILD_NUMBER}
-                    docker rmi -f shaytanchik/nginx-jenkins:1.${env.BUILD_NUMBER}
+                    docker build -t shaytanchik/nginx-jenkins2:1.${env.BUILD_NUMBER} . 
+                    docker push shaytanchik/nginx-jenkins2:1.${env.BUILD_NUMBER}
+                    docker rmi -f shaytanchik/nginx-jenkins2:1.${env.BUILD_NUMBER}
                 """
            }
         }
@@ -24,9 +24,9 @@ pipeline{
         steps {
             dir ('apache') {
                 sh """
-                    docker build -t shaytanchik/apache-jenkins:1.${env.BUILD_NUMBER} .
-                    docker push shaytanchik/apache-jenkins:1.${env.BUILD_NUMBER}
-                    docker rmi -f shaytanchik/apache-jenkins:1.${env.BUILD_NUMBER}
+                    docker build -t shaytanchik/apache-jenkins2:1.${env.BUILD_NUMBER} .
+                    docker push shaytanchik/apache-jenkins2:1.${env.BUILD_NUMBER}
+                    docker rmi -f shaytanchik/apache-jenkins2:1.${env.BUILD_NUMBER}
                 """
             }
         }
