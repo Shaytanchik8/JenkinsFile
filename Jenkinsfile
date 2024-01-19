@@ -20,6 +20,7 @@ pipeline{
            }
         }
     }
+        
     stage("Docker build container apache"){
         steps {
             dir ('apache') {
